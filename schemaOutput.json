@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "properties": {
+    "component": { "const": "SelectableCard", "type": "string" },
+    "questionKeys": { "type": "array", "items": { "type": "string" } },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "optionKey": { "type": "string" },
+          "text": { "type": "string" }
+        },
+        "required": ["optionKey", "text"]
+      }
+    },
+    "gridColumn": { "type": "string" },
+    "gridRow": { "type": "string" },
+    "title": {
+      "type": "object",
+      "properties": {
+        "text": { "type": "string" },
+        "tooltip": { "type": "string" }
+      },
+      "required": ["text"]
+    },
+    "subtitle": {
+      "type": "object",
+      "properties": {
+        "text": { "type": "string" },
+        "tooltip": { "type": "string" }
+      },
+      "required": ["text"]
+    },
+    "category": {
+      "anyOf": [
+        { "const": "Category 1", "type": "string" },
+        { "const": "Category 2", "type": "string" }
+      ]
+    },
+    "noDetailsCheckbox": { "type": "boolean" },
+    "weight": { "minimum": 0, "maximum": 1, "type": "number" },
+    "multiple": { "type": "boolean" },
+    "popupOnSelect": {
+      "type": "object",
+      "properties": {
+        "optionKey": { "type": "string" },
+        "text": { "type": "string" }
+      },
+      "required": ["optionKey", "text"]
+    }
+  },
+  "required": [
+    "component",
+    "questionKeys",
+    "options",
+    "gridColumn",
+    "gridRow",
+    "title",
+    "subtitle",
+    "category"
+  ]
+}
